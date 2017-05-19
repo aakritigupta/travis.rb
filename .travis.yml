@@ -3,9 +3,11 @@ language: ruby
 sudo: false
 
 cache: bundler
-
+script:
+  - echo "$TRAVIS_EVENT_TYPE"
 rvm:
 - 1.9.2
+  condition: "$TRAVIS_EVENT_TYPE = cron"
 - 1.9.3
 - 2.0.0
 - 2.1.0
